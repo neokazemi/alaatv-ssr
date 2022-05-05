@@ -12,100 +12,6 @@
       padding
       dark
     >
-<!--      <q-expansion-item-->
-<!--        class="side-expansion-list top-expansion"-->
-<!--        :header-style="{fontSize:'16px', height:'40px', borderRadius: '14px'}"-->
-<!--        label="برنامه ی آزمون ها"-->
-<!--        dark-->
-<!--      >-->
-<!--        <q-list-->
-<!--          class="list-expansion"-->
-<!--          padding-->
-<!--        >-->
-<!--&lt;!&ndash;          <div&ndash;&gt;-->
-<!--&lt;!&ndash;            v-for="(examPlan, index) in examsPlan"&ndash;&gt;-->
-<!--&lt;!&ndash;            :key="index"&ndash;&gt;-->
-<!--&lt;!&ndash;          >&ndash;&gt;-->
-<!--&lt;!&ndash;            <a&ndash;&gt;-->
-<!--&lt;!&ndash;              v-if="!examPlan.divider"&ndash;&gt;-->
-<!--&lt;!&ndash;              :href="examPlan.link"&ndash;&gt;-->
-<!--&lt;!&ndash;              target="_blank"&ndash;&gt;-->
-<!--&lt;!&ndash;            >&ndash;&gt;-->
-<!--&lt;!&ndash;              <q-item&ndash;&gt;-->
-<!--&lt;!&ndash;                clickable&ndash;&gt;-->
-<!--&lt;!&ndash;                v-ripple:deep-purple&ndash;&gt;-->
-<!--&lt;!&ndash;                :active="false"&ndash;&gt;-->
-<!--&lt;!&ndash;                active-class="active-route"&ndash;&gt;-->
-<!--&lt;!&ndash;              >&ndash;&gt;-->
-<!--&lt;!&ndash;                <q-item-section class="item-list-expansion">&ndash;&gt;-->
-<!--&lt;!&ndash;                  <span class="item-list-expansion-title">&ndash;&gt;-->
-<!--&lt;!&ndash;                    {{ examPlan.name }}&ndash;&gt;-->
-<!--&lt;!&ndash;                  </span>&ndash;&gt;-->
-<!--&lt;!&ndash;                </q-item-section>&ndash;&gt;-->
-<!--&lt;!&ndash;              </q-item>&ndash;&gt;-->
-<!--&lt;!&ndash;            </a>&ndash;&gt;-->
-<!--&lt;!&ndash;            <q-separator&ndash;&gt;-->
-<!--&lt;!&ndash;              v-else&ndash;&gt;-->
-<!--&lt;!&ndash;              class="top-expansion-separator"&ndash;&gt;-->
-<!--&lt;!&ndash;              size="2px"&ndash;&gt;-->
-<!--&lt;!&ndash;              dark&ndash;&gt;-->
-<!--&lt;!&ndash;            />&ndash;&gt;-->
-<!--&lt;!&ndash;          </div>&ndash;&gt;-->
-<!--        </q-list>-->
-<!--      </q-expansion-item>-->
-<!--      <q-separator class="top-separator" size="2px" dark/>-->
-<!--      <div-->
-<!--        v-for="(item , index) in titlesList"-->
-<!--        :key="index"-->
-<!--      >-->
-<!--        <q-expansion-item-->
-<!--          v-if="item.children.length"-->
-<!--          :header-style="{fontSize:'16px', height:'40px', borderRadius: '14px'}"-->
-<!--          :label="item.title"-->
-<!--          :icon="item.icon"-->
-<!--          class="side-expansion-list"-->
-<!--          dark-->
-<!--        >-->
-<!--          <div class="expansion-body">-->
-<!--            <q-separator dark size="2px" vertical class="vertical-separator"/>-->
-<!--            <q-list class="list-expansion">-->
-<!--&lt;!&ndash;              Todo : toxic Traits!!!!!&ndash;&gt;-->
-<!--              <q-item-->
-<!--                v-for="(subItem , i) in item.children"-->
-<!--                :key="i"-->
-<!--                :to="{ name: subItem.routeName, params: subItem.params }"-->
-<!--                class="list-child-item"-->
-<!--                exact-active-class="active-route"-->
-<!--              >-->
-<!--                <q-item-section-->
-<!--                  class="list-child-section"-->
-<!--                >-->
-<!--                  {{ subItem.title }}-->
-<!--                </q-item-section>-->
-<!--                <span class="indicator"/>-->
-<!--              </q-item>-->
-<!--            </q-list>-->
-<!--          </div>-->
-<!--        </q-expansion-item>-->
-<!--        <q-item-->
-<!--          v-else-->
-<!--          :to="(item.routeName) ? {name: item.routeName} : null"-->
-<!--          class="item-list"-->
-<!--          :class="{ 'alone-item': !item.children.length}"-->
-<!--          v-model="clickedItem"-->
-<!--          exact-active-class="active-route"-->
-<!--        >-->
-<!--          <div class="section-title">-->
-<!--            <q-item-section class="list-section title-icon" avatar>-->
-<!--              <q-avatar :icon="item.icon" size="30"/>-->
-<!--            </q-item-section>-->
-<!--            <q-item-section class="list-section">-->
-<!--              {{ item.title }}-->
-<!--            </q-item-section>-->
-<!--            <span class="indicator"/>-->
-<!--          </div>-->
-<!--        </q-item>-->
-<!--      </div>-->
       <q-input dense standout="bg-deep-purple-5 text-white" v-model="searchText" @update:model-value ="search(titlesList)" placeholder="جست و جو">
         <template v-slot:append>
           <q-icon name="search" />
@@ -149,56 +55,56 @@ export default {
           children: [
             {
               title: 'خالی کردن کش',
-              routeName: '',
+              routeName: 'none',
               active: false,
               show: true,
               open: false,
               children: [
                 {
                   title: 'خالی کردن کل کش',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش محصول',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش سفارش',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش آیتم سبد',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش کاربر',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش تراکنش',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش کانتنت',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'خالی کردن کش ست',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -206,20 +112,58 @@ export default {
             },
             {
               title: 'کاربران',
-              routeName: '',
+              routeName: 'Admin.User.Index',
               show: true,
               active: false
             },
             {
               title: 'مدیریت ساعت کاری',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'شیفت کارمندان',
-                  routeName: '',
+                  routeName: 'Admin.ScheduleManagement.Index',
+                  show: true,
+                  active: false
+                }
+              ]
+            },
+            {
+              title: 'سفارش ها',
+              routeName: 'none',
+              show: true,
+              active: false,
+              children: [
+                {
+                  title: 'انتقال سفارش های کاربر',
+                  routeName: 'Admin.ScheduleManagement.Index',
+                  show: true,
+                  active: false
+                },
+                {
+                  title: 'ثبت سفارش جدید',
+                  routeName: 'Admin.ScheduleManagement.Index',
+                  show: true,
+                  active: false
+                },
+                {
+                  title: 'مدیریت سفارش ها',
+                  routeName: 'Admin.Order.Index',
+                  show: true,
+                  active: false
+                },
+                {
+                  title: 'مدیریت تراکنش ها',
+                  routeName: 'Admin.ScheduleManagement.Index',
+                  show: true,
+                  active: false
+                },
+                {
+                  title: 'مدیریت بن کاربران',
+                  routeName: 'Admin.ScheduleManagement.Index',
                   show: true,
                   active: false
                 }
@@ -227,26 +171,26 @@ export default {
             },
             {
               title: 'پیامک',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'دفترچه تلفن',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'ارسال پیامک',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'لاگ های پیامک',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -254,20 +198,20 @@ export default {
             },
             {
               title: 'گزارش ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'گزارش فروش',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'گزارش خاص',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -275,32 +219,58 @@ export default {
             },
             {
               title: 'بلوک ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'محصولات',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'مدیریت محصولات',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
-                  active: false
+                  active: false,
+                  children: [
+                    {
+                      title: 'مدیریت محصولات',
+                      routeName: 'none',
+                      show: true,
+                      active: false
+                    },
+                    {
+                      title: 'مدیریت کپن ها',
+                      routeName: 'none',
+                      show: true,
+                      active: false
+                    },
+                    {
+                      title: 'مدیریت صفت ها',
+                      routeName: 'Admin.AttributeManagement.Index',
+                      show: true,
+                      active: false
+                    },
+                    {
+                      title: 'مدیریت دسته صفت ها',
+                      routeName: 'none',
+                      show: true,
+                      active: false
+                    }
+                  ]
                 },
                 {
                   title: 'توضیحات لحظه ای',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'مدیریت ووچرها',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -308,26 +278,32 @@ export default {
             },
             {
               title: 'مدیریت محتوا',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'منبع',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'محتوا',
-                  routeName: '',
+                  routeName: 'Admin.Content.Index',
                   show: true,
                   active: false
                 },
                 {
                   title: 'دسته محتوا',
-                  routeName: '',
+                  routeName: 'Admin.Content.Index',
+                  show: true,
+                  active: false
+                },
+                {
+                  title: 'سکشن محتوا',
+                  routeName: 'Admin.Content.Index',
                   show: true,
                   active: false
                 }
@@ -335,68 +311,68 @@ export default {
             },
             {
               title: 'پنل لیست ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'پنل کیف پول',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'پنل بات ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'قرعه کشی ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'گروه تیکت',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'تگ ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'پیکربندی سایت',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'ویدئوهای وست',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'تنظیمات سایت',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'سوالات متداول',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'اسلاید شو',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -404,50 +380,50 @@ export default {
             },
             {
               title: 'درگاه پرداخت',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'لاگ فعالیت ها',
-              routeName: '',
+              routeName: 'none',
               show: true,
               active: false
             },
             {
               title: 'پنل های خاص',
-              routeName: '',
+              routeName: 'none',
               show: true,
               open: false,
               active: false,
               children: [
                 {
                   title: 'تله مارکتینگ',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'درج کاربر با سفارش',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'تولید کوپن تصادفی',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'ثبت نام عمومی کاربران',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 },
                 {
                   title: 'اصلاح شهر و استان',
-                  routeName: '',
+                  routeName: 'none',
                   show: true,
                   active: false
                 }
@@ -455,44 +431,6 @@ export default {
             }
           ]
         },
-        // {
-        //   title: 'آزمون',
-        //   icon: 'isax:task-square',
-        //   routeName: null,
-        //   active: false,
-        //   children: [
-        //     { title: 'ساخت آزمون', routeName: 'Admin.Exam.Create', active: false },
-        //     { title: 'لیست آزمون ها', routeName: 'Admin.Exam.Index', active: false }
-        //   ]
-        // },
-        // {
-        //   title: 'درخت دانش',
-        //   icon: 'isax:tree',
-        //   routeName: 'Admin.KnowledgeTree.tree',
-        //   active: false,
-        //   children: []
-        // },
-        // {
-        //   title: 'لیست دروس',
-        //   icon: 'isax:book',
-        //   routeName: 'Admin.subCategory.Index',
-        //   active: false,
-        //   children: []
-        // },
-        // {
-        //   title: 'لیست دفترچه ها',
-        //   icon: 'isax:book',
-        //   routeName: 'Admin.Category.Index',
-        //   active: false,
-        //   children: []
-        // },
-        // {
-        //   title: 'گزارشات',
-        //   icon: 'isax:graph',
-        //   routeName: null,
-        //   active: false,
-        //   children: []
-        // },
         {
           title: 'تنظیمات',
           icon: 'isax:setting-2',
